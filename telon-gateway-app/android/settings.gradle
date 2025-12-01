@@ -4,7 +4,14 @@ pluginManagement {
 plugins {
     id("com.facebook.react.settings")
 }
-extensions.configure(com.facebook.react.ReactSettingsExtension){ autolinkLibrariesFromCommand() }
+
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    if (ex.respondsTo("autolinkLibrariesFromCommand")) {
+        ex.autolinkLibrariesFromCommand()
+    } else {
+        println "ReactSettingsExtension.autolinkLibrariesFromCommand not found"
+    }
+}
 
 rootProject.name = 'teleexample'
 include ':app'

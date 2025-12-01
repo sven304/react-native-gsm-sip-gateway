@@ -28,6 +28,7 @@
     "@babel/core": "^7.24.0",
     "@babel/runtime": "^7.24.0",
     "@react-native-community/cli": "^18.0.0",
+    "@react-native-community/cli-platform-android": "^18.0.0",
     "@react-native-community/eslint-config": "^3.2.0",
     "babel-jest": "^29.7.0",
     "eslint": "^8.57.0",

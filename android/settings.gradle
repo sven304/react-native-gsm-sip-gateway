@@ -3,5 +3,9 @@ include ':react-native-sip2'
 project(':react-native-sip2').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sip2/android')
 include ':react-native-tele'
 project(':react-native-tele').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-tele/android/app')
-apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+def rnCliGradle = file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+if (rnCliGradle.exists()) {
+  apply from: rnCliGradle
+  applyNativeModulesSettingsGradle(settings)
+}
 include ':app'
